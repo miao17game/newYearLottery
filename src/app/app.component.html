@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="left-container">
+    <div *ngFor="let item of list" class="line selected" [class.selected]="item.selected===true">
+      <div class="section">{{item.account | appName}}</div>
+      <div class="section">{{item.name}}</div>
+    </div>
+  </div>
+  <div class="right-container">
+    <div class="line title">
+      一共有
+      <b>{{this.list.length}}</b> 个小朋友们
+    </div>
+    <div class="line noline">
+      <span>最幸运的小朋友🤩是 :
+        <b>{{selected01.name}}</b> ！</span>
+      <br/>
+      <span class="summary">将拿走我今天一半的红包收益😣</span>
+      <br/>
+      <button *ngIf="!ok01" (click)="select(0)">😎😎😎</button>
+    </div>
+    <div class="line noline">
+      <span>第二幸运的小朋友🤗是 :
+        <b> {{selected02.name}} </b>！</span>
+      <br/>
+      <span class="summary">将拿走我今天30%半的红包收益🙄</span>
+      <br/>
+      <button *ngIf="!ok02" (click)="select(1)">😍😍😍</button>
+    </div>
+    <div class="line noline">
+      <span>第三个幸运的小朋友😄是 :
+        <b> {{selected03.name}}</b> ！</span>
+      <br/>
+      <span class="summary">将拿走我今天20%的红包收益😑</span>
+      <br/>
+      <button *ngIf="!ok03" (click)="select(2)">🤩🤩🤩</button>
+    </div>
+  </div>
+</div>
